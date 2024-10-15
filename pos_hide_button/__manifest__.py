@@ -27,6 +27,9 @@
             'pos_hide_button/static/src/js/models.js'
         ]
     },
+    'currency': 'USD',
+    'license': 'LGPL-3',
+    'price': 15.00,
 
     'demo': [],
 }
