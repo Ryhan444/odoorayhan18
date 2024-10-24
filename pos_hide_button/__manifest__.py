@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Hide Button Actions or Hide Components Button Actions in Point of Sale(POS)",
+    'name': "POS Hide Button Actions or Hide Components Button Actions",
 
     'summary': """can hide button in pos from setup users""",
 
