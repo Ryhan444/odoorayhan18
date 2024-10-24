@@ -45,6 +45,20 @@ patch(ControlButtons.prototype, {
             } else {
                 this.has_cancel = true; // Set default value
             }
+            const user_actions = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_actions']);
+            if (user_actions && user_actions.length > 0) {
+                this.pos_hide_actions = user_actions[0].pos_hide_actions;
+                this.has_actions = !this.pos_hide_actions; // true jika pos_hide_refund false
+            } else {
+                this.has_actions = true; // Set default value
+            }
+            const user_quotations = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_quotations_order']);
+            if (user_quotations && user_quotations.length > 0) {
+                this.pos_hide_quotations_order = user_quotations[0].pos_hide_quotations_order;
+                this.has_quotations = !this.pos_hide_quotations_order; // true jika pos_hide_refund false
+            } else {
+                this.has_quotations = true; // Set default value
+            }
         });
     },
 });

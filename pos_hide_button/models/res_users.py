@@ -37,3 +37,13 @@ class ResUsers(models.Model):
         default=False,
         help="Hide Cancel Order Button in POS"
     )
+    pos_hide_quotations_order = fields.Boolean(
+        string="Hide Quotations Order Button",
+        default=False,
+        help="Hide Quotations Order Button in POS"
+    )
+    pos_hide_actions = fields.Boolean(
+        string="Hide Actions Button",
+        default=False,
+        help="Hide Actions Button in POS"
+    )
