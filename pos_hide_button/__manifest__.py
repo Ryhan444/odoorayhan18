@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "POS Hide Button",
+    'name': "Hide Button Actions or Hide Components Button Actions in Point of Sale(POS)",
 
     'summary': """can hide button in pos from setup users""",
 
     'description': """
-        ide button in pos from setup users
+        hide button in pos from setup users
     """,
 
-    'author': "Achmad Rayhan Alief",
+    'author': "ARA SOFT",
     'website': "",
-
+    "images": ["static/description/icon.png"],
     'category': 'Point of Sale',
     "version": "18.0.0.0.0",
 
@@ -27,9 +27,11 @@
             'pos_hide_button/static/src/js/models.js'
         ]
     },
-    'currency': 'USD',
-    'license': 'LGPL-3',
-    'price': 15.00,
-
+    'installable': True,
+    'application': True,
+    'auto_install': False,
     'demo': [],
+    'price': 13.50,
+    'currency': 'USD',
+    'license': 'OPL-1',
 }

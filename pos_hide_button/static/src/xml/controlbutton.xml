@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="RefundCustome" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+    <t t-name="ControlButtonCustome" t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
         <xpath expr="//button[@t-on-click='() => this.clickRefund()']" position="replace"> 
             <t t-if="has_refund">
                 <button class="btn btn-secondary btn-lg py-5" t-on-click="() => this.clickRefund()">
@@ -35,5 +35,20 @@
                 </button>
             </t>
         </xpath>
+        <xpath expr="//button[@t-on-click='() => this.onClickQuotation()']" position="replace">
+            <t t-if="has_quotations">
+                <button t-att-class="buttonClass" t-on-click="() => this.onClickQuotation()">
+                    <i class="fa fa-link me-1" role="img" aria-label="Set Sale Order" title="Set Sale Order" /> Quotation/Order
+                </button>
+            </t>
+        </xpath>
+        <xpath expr="//button[@t-on-click='props.onClickMore']" position="replace">
+            <t t-if="has_actions">
+                <button class="btn btn-light btn-lg flex-shrink-0 ms-auto" t-if="!props.showRemainingButtons and !ui.isSmall and props.onClickMore" t-on-click="props.onClickMore">
+                    Actions
+                </button>
+            </t>
+        </xpath>
     </t>
+
 </templates>
