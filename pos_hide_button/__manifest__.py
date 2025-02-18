@@ -16,6 +16,7 @@
 
     'depends': [
         'point_of_sale',
+        'pos_sale'
     ],
 
     'data': [
@@ -31,7 +32,7 @@
     'application': True,
     'auto_install': False,
     'demo': [],
-    'price': 13.50,
+    'price': 15.20,
     'currency': 'USD',
     'license': 'OPL-1',
 }
