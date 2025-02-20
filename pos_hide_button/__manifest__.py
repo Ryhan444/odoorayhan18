@@ -13,9 +13,11 @@
     "images": ["static/description/icon.png"],
     'category': 'Point of Sale',
     "version": "18.0.0.0.0",
-
     'depends': [
         'point_of_sale',
+        'pos_sale',
+        'pos_loyalty',
+        'pos_discount',
     ],
 
     'data': [
@@ -31,7 +33,7 @@
     'application': True,
     'auto_install': False,
     'demo': [],
-    'price': 13.50,
+    'price': 15.20,
     'currency': 'USD',
     'license': 'OPL-1',
 }
