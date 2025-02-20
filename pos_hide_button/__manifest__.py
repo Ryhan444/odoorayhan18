@@ -19,7 +19,6 @@
         'pos_loyalty',
         'pos_discount',
     ],
-
     'data': [
         'views/res_users_view.xml',
     ],
