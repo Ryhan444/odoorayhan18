@@ -10,7 +10,7 @@
 
     'author': "ARA SOFT",
     'website': "",
-    "images": ["static/description/icon.png"],
+    "images": ["static/description/banner.png"],
     'category': 'Point of Sale',
     "version": "18.0.0.0.0",
     'depends': [
@@ -32,7 +32,7 @@
     'application': True,
     'auto_install': False,
     'demo': [],
-    'price': 15.20,
+    'price': 14.80,
     'currency': 'USD',
     'license': 'OPL-1',
 }
