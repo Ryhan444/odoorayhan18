@@ -10,7 +10,7 @@
 
     'author': "ARA SOFT",
     'website': "",
-    "images": ["static/description/banner.png"],
+    "images": ["static/description/banner.gif"],
     'category': 'Point of Sale',
     "version": "18.0.0.0.0",
     'depends': [
