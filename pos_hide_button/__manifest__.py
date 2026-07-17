@@ -10,9 +10,9 @@
 
     'author': "ARA SOFT",
     'website': "",
-    "images": ["static/description/icon.png"],
+    "images": ["static/description/banner.gif"],
     'category': 'Point of Sale',
-    "version": "18.0.0.0.0",
+    "version": "19.0.0.0.0",
     'depends': [
         'point_of_sale',
         'pos_sale',
@@ -24,15 +24,17 @@
     ],
     'assets': {
         'point_of_sale._assets_pos':[
-            'pos_hide_button/static/src/xml/controlbutton.xml',
+            'pos_hide_button/static/src/xml/ControllButton.xml',
             'pos_hide_button/static/src/js/models.js'
+            'pos_hide_button/static/src/js/orderline_note_button.js',
+            'pos_hide_button/static/src/xml/orderline_note_button.xml'
         ]
     },
     'installable': True,
     'application': True,
     'auto_install': False,
     'demo': [],
-    'price': 15.20,
+    'price': 20.26,
     'currency': 'USD',
     'license': 'OPL-1',
 }

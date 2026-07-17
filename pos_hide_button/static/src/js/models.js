@@ -17,6 +17,40 @@ patch(ControlButtons.prototype, {
             } else {
                     this.has_refund = true; // Set default value
             }
+            const user_info = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_info']);
+            if (user_info && user_info.length > 0) {
+                    this.pos_hide_info = user_info[0].pos_hide_info;
+                    this.has_info = !this.pos_hide_info; // true jika pos_hide_info false
+            } else {
+                    this.has_info = true; // Set default value
+            }
+
+            const user_enter_code = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_enter_code']);
+            if (user_enter_code && user_enter_code.length > 0) {
+                    this.pos_hide_enter_code = user_enter_code[0].pos_hide_enter_code;
+                    this.has_enter_code = !this.pos_hide_enter_code; // true jika pos_hide_info false
+            } else {
+                    this.has_enter_code = true; // Set default value
+            }
+
+
+            const user_reward = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_reward']);
+            if (user_reward && user_reward.length > 0) {
+                    this.pos_hide_reward = user_reward[0].pos_hide_reward;
+                    this.has_reward = !this.pos_hide_reward; // true jika pos_hide_info false
+            } else {
+                    this.has_reward = true; // Set default value
+            }
+
+            const user_reset_program = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_reset_program']);
+            if (user_reset_program && user_reset_program.length > 0) {
+                    this.pos_hide_reset_program = user_reset_program[0].pos_hide_reset_program;
+                    this.has_reset_program = !this.pos_hide_reset_program; // true jika pos_hide_info false
+            } else {
+                    this.has_reset_program = true; // Set default value
+            }
+
+
             const user_general_note = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_general_note']);
             if (user_general_note && user_general_note.length > 0) {
                 this.pos_hide_general_note = user_general_note[0].pos_hide_general_note;

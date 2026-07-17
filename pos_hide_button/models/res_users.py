@@ -47,3 +47,24 @@ class ResUsers(models.Model):
         default=False,
         help="Hide Actions Button in POS"
     )
+    pos_hide_info = fields.Boolean(
+        string="Hide Info Button",
+        default=False,
+        help="Hide Info Button in POS"
+    )
+    pos_hide_enter_code = fields.Boolean(
+        string="Hide Enter Code Button",
+        default=False,
+        help="Hide Enter Code Button in POS"
+    )
+    pos_hide_reward = fields.Boolean(
+        string="Hide Reward Button",
+        default=False,
+        help="Hide Reward Button in POS"
+    )
+    pos_hide_reset_program = fields.Boolean(
+        string="Hide Reset Program Button",
+        default=False,
+        help="Hide Reset Program Button in POS"
+    )
+
