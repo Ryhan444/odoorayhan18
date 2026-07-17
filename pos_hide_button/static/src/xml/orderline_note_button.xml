@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_hide_button.NoteButton" t-inherit="point_of_sale.NoteButton" t-inherit-mode="extension">
+        <xpath expr="//button[@t-on-click='onClick']" position="replace"> 
+            <t t-if="has_general_note">
+                <button
+                    t-attf-class="{{this.props.class}} flex-shrink-0"
+                    t-att-disabled="pos.getOrder()?.isEmpty()" t-on-click="onClick">
+                    <t t-if="this.props.icon">
+                        <i t-attf-class="{{this.props.icon}} me-1"/>
+                    </t>
+                    <span t-esc="this.props.label"/>
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates>

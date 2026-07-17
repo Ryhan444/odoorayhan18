@@ -18,6 +18,10 @@
                                 <field name="pos_hide_customer_note"/>
                                 <field name="pos_hide_pricelist"/>
                                 <field name="pos_hide_refund"/>
+                                <field name="pos_hide_info"/>
+                                <field name="pos_hide_enter_code" />
+                                <field name="pos_hide_reward" />
+                                <field name="pos_hide_reset_program" />
                                 <field name="pos_hide_cancel_order"/>
                             </group>
                            
