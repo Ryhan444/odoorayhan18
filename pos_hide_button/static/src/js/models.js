@@ -1,7 +1,6 @@
 /** @odoo-module */
 import { ControlButtons } from "@point_of_sale/app/screens/product_screen/control_buttons/control_buttons";
 import { user } from "@web/core/user";
-
 import { patch } from "@web/core/utils/patch";
 import { onWillStart } from "@odoo/owl";
 
@@ -10,104 +9,43 @@ patch(ControlButtons.prototype, {
         super.setup(...arguments);
         onWillStart(async () => {
             const currentUser = user.userId;
-            const fetchedUser = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_refund']);
-            if (fetchedUser && fetchedUser.length > 0) {
-                    this.pos_hide_refund = fetchedUser[0].pos_hide_refund;
-                    this.has_refund = !this.pos_hide_refund; // true jika pos_hide_refund false
-            } else {
-                    this.has_refund = true; // Set default value
-            }
-            const user_info = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_info']);
-            if (user_info && user_info.length > 0) {
-                    this.pos_hide_info = user_info[0].pos_hide_info;
-                    this.has_info = !this.pos_hide_info; // true jika pos_hide_info false
-            } else {
-                    this.has_info = true; // Set default value
-            }
-
-            const user_enter_code = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_enter_code']);
-            if (user_enter_code && user_enter_code.length > 0) {
-                    this.pos_hide_enter_code = user_enter_code[0].pos_hide_enter_code;
-                    this.has_enter_code = !this.pos_hide_enter_code; // true jika pos_hide_info false
-            } else {
-                    this.has_enter_code = true; // Set default value
-            }
-
-
-            const user_reward = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_reward']);
-            if (user_reward && user_reward.length > 0) {
-                    this.pos_hide_reward = user_reward[0].pos_hide_reward;
-                    this.has_reward = !this.pos_hide_reward; // true jika pos_hide_info false
-            } else {
-                    this.has_reward = true; // Set default value
-            }
-
-            const user_reset_program = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_reset_program']);
-            if (user_reset_program && user_reset_program.length > 0) {
-                    this.pos_hide_reset_program = user_reset_program[0].pos_hide_reset_program;
-                    this.has_reset_program = !this.pos_hide_reset_program; // true jika pos_hide_info false
-            } else {
-                    this.has_reset_program = true; // Set default value
-            }
-
-
-            const user_general_note = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_general_note']);
-            if (user_general_note && user_general_note.length > 0) {
-                this.pos_hide_general_note = user_general_note[0].pos_hide_general_note;
-                this.has_general_note = !this.pos_hide_general_note; // true jika pos_hide_refund false
-            } else {
-                this.has_general_note = true; // Set default value
-            }
-            const user_customer_note = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_customer_note']);
-            if (user_customer_note && user_customer_note.length > 0) {
-                this.pos_hide_customer_note = user_customer_note[0].pos_hide_customer_note;
-                this.has_customer_note = !this.pos_hide_customer_note; // true jika pos_hide_refund false
-            } else {
-                this.has_customer_note = true; // Set default value
-            }
-            const user_pricelist = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_pricelist']);
-            if (user_pricelist && user_pricelist.length > 0) {
-                this.pos_hide_pricelist = user_pricelist[0].pos_hide_pricelist;
-                this.has_pricelist = !this.pos_hide_pricelist; // true jika pos_hide_refund false
-            } else {
-                this.has_pricelist = true; // Set default value
-            }
-            const user_cancel = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_cancel_order']);
-            if (user_cancel && user_cancel.length > 0) {
-                this.pos_hide_cancel_order = user_cancel[0].pos_hide_cancel_order;
-                this.has_cancel = !this.pos_hide_cancel_order; // true jika pos_hide_refund false
-            } else {
-                this.has_cancel = true; // Set default value
-            }
-            const user_actions = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_actions']);
-            if (user_actions && user_actions.length > 0) {
-                this.pos_hide_actions = user_actions[0].pos_hide_actions;
-                this.has_actions = !this.pos_hide_actions; // true jika pos_hide_refund false
-            } else {
-                this.has_actions = true; // Set default value
-            }
-            const user_quotations = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_quotations_order']);
-            if (user_quotations && user_quotations.length > 0) {
-                this.pos_hide_quotations_order = user_quotations[0].pos_hide_quotations_order;
-                this.has_quotations = !this.pos_hide_quotations_order; // true jika pos_hide_refund false
-            } else {
-                this.has_quotations = true; // Set default value
-            }
             
-            const user_cust = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_customer']);
-            if (user_cust && user_cust.length > 0) {
-                this.pos_hide_customer = user_cust[0].pos_hide_customer;
-                this.has_cust = !this.pos_hide_customer; // true jika pos_hide_refund false
-            } else {
-                this.has_cust = true; // Set default value
-            }
+            // Definisikan semua field yang ingin diambil dalam satu array
+            const fields = [
+                'pos_hide_refund', 'pos_hide_info', 'pos_hide_enter_code', 
+                'pos_hide_reward', 'pos_hide_reset_program', 'pos_hide_general_note', 
+                'pos_hide_customer_note', 'pos_hide_pricelist', 'pos_hide_cancel_order', 
+                'pos_hide_actions', 'pos_hide_quotations_order', 'pos_hide_customer', 
+                'pos_hide_uploud'
+            ];
 
-            const user_uploud = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_uploud']);
-            if (user_uploud && user_uploud.length > 0) {
-                this.pos_hide_uploud = user_uploud[0].pos_hide_uploud;
-                this.has_uploud = !this.pos_hide_uploud; // true jika pos_hide_refund false
+            // Cukup 1 kali tembak ke server untuk mengambil semua data!
+            const fetchedUsers = await this.env.services.orm.read('res.users', [currentUser], fields);
+            
+            if (fetchedUsers && fetchedUsers.length > 0) {
+                const userData = fetchedUsers[0];
+                
+                // Assign nilainya secara dinamis atau satu per satu
+                this.has_refund = !userData.pos_hide_refund;
+                this.has_info = !userData.pos_hide_info;
+                this.has_enter_code = !userData.pos_hide_enter_code;
+                this.has_reward = !userData.pos_hide_reward;
+                this.has_reset_program = !userData.pos_hide_reset_program;
+                this.has_general_note = !userData.pos_hide_general_note;
+                this.has_customer_note = !userData.pos_hide_customer_note;
+                this.has_pricelist = !userData.pos_hide_pricelist;
+                this.has_cancel = !userData.pos_hide_cancel_order;
+                this.has_actions = !userData.pos_hide_actions;
+                this.has_quotations = !userData.pos_hide_quotations_order;
+                this.has_cust = !userData.pos_hide_customer;
+                this.has_uploud = !userData.pos_hide_uploud;
             } else {
-                this.has_uploud = true; // Set default value
+                // Default value jika data tidak ditemukan
+                this.has_refund = this.has_info = this.has_enter_code = 
+                this.has_reward = this.has_reset_program = this.has_general_note = 
+                this.has_customer_note = this.has_pricelist = this.has_cancel = 
+                this.has_actions = this.has_quotations = this.has_cust = 
+                this.has_uploud = true;
             }
         });
     },

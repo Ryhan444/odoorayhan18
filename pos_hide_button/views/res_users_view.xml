@@ -15,7 +15,7 @@
                                 <field name="pos_hide_customer" />
                                 <field name="pos_hide_uploud" />
                             </group>
-                            <group string="Component" invisible="pos_hide_actions">
+                            <group string="Component Actions Button" invisible="pos_hide_actions">
                                 <field name="pos_hide_quotations_order"/>
                                 <field name="pos_hide_customer_note"/>
                                 <field name="pos_hide_pricelist"/>
