@@ -24,10 +24,12 @@
     ],
     'assets': {
         'point_of_sale._assets_pos':[
+            'pos_hide_button/static/src/js/models.js',
             'pos_hide_button/static/src/xml/ControllButton.xml',
-            'pos_hide_button/static/src/js/models.js'
-            'pos_hide_button/static/src/js/orderline_note_button.js',
-            'pos_hide_button/static/src/xml/orderline_note_button.xml'
+
+            # 'pos_hide_button/static/src/js/orderline_note_button.js',
+
+            # 'pos_hide_button/static/src/xml/orderline_note_button.xml'
         ]
     },
     'installable': True,
