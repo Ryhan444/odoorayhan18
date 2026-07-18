@@ -26,17 +26,15 @@
         'point_of_sale._assets_pos':[
             'pos_hide_button/static/src/js/models.js',
             'pos_hide_button/static/src/xml/ControllButton.xml',
-
-            # 'pos_hide_button/static/src/js/orderline_note_button.js',
-
-            # 'pos_hide_button/static/src/xml/orderline_note_button.xml'
+            'pos_hide_button/static/src/js/orderline_note_button.js',
+            'pos_hide_button/static/src/xml/orderline_note_button.xml'
         ]
     },
     'installable': True,
     'application': True,
     'auto_install': False,
     'demo': [],
-    'price': 20.26,
+    'price': 30.26,
     'currency': 'USD',
     'license': 'OPL-1',
 }

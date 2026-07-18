@@ -67,4 +67,13 @@ class ResUsers(models.Model):
         default=False,
         help="Hide Reset Program Button in POS"
     )
-
+    pos_hide_customer = fields.Boolean(
+        string="Hide Customer Button",
+        default=False,
+        help="Hide Customer Button in POS"
+    )
+    pos_hide_uploud = fields.Boolean(
+        string="Hide Uploud Button",
+        default=False,
+        help="Hide Uploud Button in POS"
+    )

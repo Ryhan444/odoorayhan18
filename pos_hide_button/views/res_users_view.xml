@@ -11,10 +11,12 @@
                         <group string="Pos Interface">
                             <group string="General Hide">
                                 <field name="pos_hide_actions"/>
+                                <field name="pos_hide_general_note"/>
+                                <field name="pos_hide_customer" />
+                                <field name="pos_hide_uploud" />
                             </group>
                             <group string="Component" invisible="pos_hide_actions">
                                 <field name="pos_hide_quotations_order"/>
-                                <field name="pos_hide_general_note"/>
                                 <field name="pos_hide_customer_note"/>
                                 <field name="pos_hide_pricelist"/>
                                 <field name="pos_hide_refund"/>

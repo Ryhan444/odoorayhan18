@@ -93,6 +93,22 @@ patch(ControlButtons.prototype, {
             } else {
                 this.has_quotations = true; // Set default value
             }
+            
+            const user_cust = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_customer']);
+            if (user_cust && user_cust.length > 0) {
+                this.pos_hide_customer = user_cust[0].pos_hide_customer;
+                this.has_cust = !this.pos_hide_customer; // true jika pos_hide_refund false
+            } else {
+                this.has_cust = true; // Set default value
+            }
+
+            const user_uploud = await this.env.services.orm.read('res.users', [currentUser], ['pos_hide_uploud']);
+            if (user_uploud && user_uploud.length > 0) {
+                this.pos_hide_uploud = user_uploud[0].pos_hide_uploud;
+                this.has_uploud = !this.pos_hide_uploud; // true jika pos_hide_refund false
+            } else {
+                this.has_uploud = true; // Set default value
+            }
         });
     },
 });
