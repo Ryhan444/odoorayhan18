@@ -34,7 +34,7 @@
     'application': True,
     'auto_install': False,
     'demo': [],
-    'price': 30.26,
+    'price': 26.26,
     'currency': 'USD',
     'license': 'OPL-1',
 }
